@@ -14,7 +14,7 @@
     --brand-color: #2196F3;
     --white-background: #FFFFFF;
     --secondary-background: #F5F4FA;
-    --primary-background:#2F303A;
+    --primary-background: #2F303A;
     --text-rgba: rgba(255, 255, 255, 0.6);
 }
 body {
@@ -41,18 +41,14 @@ ul {
     margin-left: auto;
     margin-right: auto;
     padding: 0 15px;
-    
-
-
 }
 
 /* Header */
-    .header {
-        border: 1px solid #ECECEC;
-    }
+    
     .head {
         display: flex;
         align-items: center;
+        border-bottom: 1px solid #ECECEC;
     }
     .logo {
         color: var(--brand-color);
@@ -111,8 +107,11 @@ ul {
         display: flex;
         margin-left: auto;
     }
+    .contact .contact-item + .contact-item {
+        margin-left: 50px;
+    }
     .contact-link {
-        display: block;
+        display: block flex;
         padding-top: 32px;
         padding-bottom: 32px;
         color: var(--secondary-text-color);
@@ -123,19 +122,43 @@ ul {
         letter-spacing: 0.02em;
         text-decoration: none;
     }
-    .contact .contact-item + .contact-item {
-        margin-left: 50px;
+    .contact-link::before {
+        content: "";
+        height: 16px;
+        width: 12px;
+        display: block;
+        margin-right: 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
     }
-    
+    .icon-envelope::before {
+        background-image: url(../img/Icon/envelope.svg);
+    }
+    .icon-phone::before {
+        background-image: url(../img/Icon/phone.svg);
+    }
 /* Hero */
-    .hero,
+    
     .footer {
         background-color: var(--primary-background);
     }
     .hero {
+        
+        text-align: center;
+    }
+    .hero-bg {
+        height: 600px;
+        min-width: 1600px;
+        margin-left: auto;
+        margin-bottom: auto;
         padding-top: 200px;
         padding-bottom: 200px;
-        text-align: center;
+        background-image: linear-gradient( 
+        to right, rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)),
+        url("../img/Img-bg.jpg");
+        background-color: var(--primary-background);
     }
     .section {
         padding: 94px 0;
@@ -194,6 +217,32 @@ ul {
     .features-item {
         width: 270px;
     }
+    .features-item::before {
+        display: block;
+        height: 120px;
+        content: "";
+        
+        border-radius: 4px;
+        
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #F5F4FA;
+        
+        
+    }
+    .icon-antena:before {
+        background-image: url(../img/Icon/antena.svg);
+        
+    }
+    .icon-clock::before {
+        background-image: url(../img/Icon/clock.svg);
+    }
+    .icon-vektor::before {
+        background-image: url(../img/Icon/vector.svg);
+    }
+    .icon-austronaut::before {
+        background-image: url(../img/Icon/astronaut.svg);
+    }
     .features .features-item + .features-item {
         margin-left: 30px;
     }
@@ -205,6 +254,7 @@ ul {
         line-height: 1.14;
         letter-spacing: 0.03em;
 
+        margin-top: 30px;
         margin-bottom: 10px;
         
     }
@@ -257,9 +307,21 @@ ul {
     .team .team-item + .team-item {
         margin-left: 30px;
     }
+    .team-item {
+        box-shadow: 0px 1px 3px 
+        rgba(0, 0, 0, 0.12), 0px 1px 1px 
+        rgba(0, 0, 0, 0.14), 0px 2px 1px 
+        rgba(0, 0, 0, 0.2);
+        background-color: var(--primary-white-color);
+        border-radius: 0px 0px 4px 4px;
+    }
+    .team-img {
+        display: block;
+    }
     .team-position {
         padding-top: 30px;
         padding-bottom: 30px;
+        
     }
     .team-title {
         color: var(--primary-text-color);
@@ -277,11 +339,53 @@ ul {
         font-size: 16px;
         line-height: 1.18;
         letter-spacing: 0.03em;
+        margin-bottom: 16px;
+    }
+    .team-list {
+        display: flex;
+        justify-content: center;
+        
+    }
+    .team-link-item {
+        margin-right: 10px;
+    }
+    .team-link-item:last-child {
+        margin-right: 0;
+    }
+    .team-link {
+        display: block;
+        content: "";
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .icon-instagram {
+        background-image: url(../img/Icon/instagram.svg);
+    }
+    .icon-twiter {
+        background-image: url(../img/Icon/twitter.svg);
+    }
+    .icon-fb {
+        background-image: url(../img/Icon/fb.svg);
+    }
+    .icon-in {
+        background-image: url(../img/Icon/linkedin.svg);
     }
     /* Footer */
     .footer {
         padding-top: 60px;
         padding-bottom: 60px;
+    }
+    .foot-container {
+        display: flex;
+        align-items: baseline;
+    }
+    .footer-contact {
+        margin-right: 70px;
     }
     .address {
         font-style: normal;
@@ -332,6 +436,65 @@ ul {
     .footer-contact.call:hover,
     .footer-contact.call:focus {
         color: var(--brand-color);
+    }
+    .footer-title {
+        color: var(--primary-white-color);
+        margin-bottom: 20px;
+
+        font-weight: 700;
+        font-size: 14px;
+        line-height: calc(16 / 14);
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+    }
+    .footer-social-list {
+        display: flex;
+    }
+    .footer-link-item {
+        margin-right: 10px;
+
+    }
+    .footer-link-item:last-child {
+        margin-right: 0;
+    }
+    .footer-link {
+        display: block;
+        content: "";
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+
+        background-color: rgba(255, 255, 255, 0.1);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .icon-instagram-w {
+        background-image: url(../img/Icon/instagram-w.svg);
+    }
+    .icon-instagram-w:hover,
+    .icon-instagram-w:focus {
+        background-color: var(--brand-color);
+    }
+    .icon-twiter-w {
+        background-image: url(../img/Icon/twitter-w.svg);
+    }
+    .icon-twiter-w:hover,
+    .icon-twiter-w:focus {
+        background-color: var(--brand-color);
+    }
+    .icon-fb-w {
+        background-image: url(../img/Icon/fb-w.svg);
+    }
+    .icon-fb-w:hover,
+    .icon-fb-w:focus {
+        background-color: var(--brand-color);
+    }
+    .icon-in-w {
+        background-image: url(../img/Icon/linkedin-w.svg);
+    }
+    .icon-in-w:hover,
+    .icon-in-w:focus {
+        background-color: var(--brand-color);
     }
     /* Portfolio */
     /* Filter */
