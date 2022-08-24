@@ -112,11 +112,12 @@ ul {
     .contact .contact-item + .contact-item {
         margin-left: 50px;
     }
+    
     .contact-item:hover {
         fill: var(--brand-color);
     }
     .contact-link {
-        display: block flex;
+        display: inline-block flex;
         padding: 0;
         padding-left: 10px;
         padding-top: 32px;
